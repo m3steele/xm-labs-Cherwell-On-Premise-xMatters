@@ -57,15 +57,11 @@ This integration will initiate an xMatters Notification when an incident __Task 
 
 # Installation
 Details of the installation go here. 
-
+<br><br><br>
 
 ## xMatters set up
 The first step in setting up your integration is to configure xMatters On-Demand.
-
-
-
-
-
+<br><br><br><br><br><br><br><br><br>
 
 ### Create an integration user
 This integration requires a user who can authenticate REST web service calls when injecting events.

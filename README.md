@@ -57,11 +57,11 @@ This integration will initiate an xMatters Notification when an incident __Task 
 
 # Installation
 Details of the installation go here. 
-<br><br><br>
+<br><br>
 
 ## xMatters set up
 The first step in setting up your integration is to configure xMatters On-Demand.
-<br><br><br><br><br><br><br><br><br>
+<br><br><br>
 
 ### Create an integration user
 This integration requires a user who can authenticate REST web service calls when injecting events.
@@ -86,7 +86,7 @@ This users details will be user for constants in the Integration Services Config
 __INITIATOR__ and __PASSWORD__
 
 
-
+<br><br><br>
 ### Create users and groups that will receive notifications
 
 The integration will notify the group or user defined as the "Owned By Team". If this recipient doesn't exist in xMatters, a hard coded group (Defaulted to "Service Desk") inside of the inbound integration New Incident One Step. This group can be changed as required.
@@ -100,7 +100,7 @@ __DEVELOPER tab -> Cherwell (On-Premise)__ communication plan -> __Edit Integrat
 For more information about creating users and devices in xMatters, refer to the [xMatters On-Demand help](https://help.xmatters.com/ondemand/xmatters.htm).
 
 
-
+<br><br><br>
 ### Import the xMatters Communication Plan
 
 The next step is to import the communication plan.
@@ -118,7 +118,7 @@ To import the communication plan:
 9. Enter the REST API user you created above, and then click __Save Changes__.
 
 
-
+<br><br><br>
 ### Accessing web service URLs
 
 Each integration service has its own URL that you can use to target it from Cherwell.
@@ -136,7 +136,7 @@ __To get a web service URL for an integration service:__
 You will need the URL for each integration service when configuring Cherwell.
 
 
-
+<br><br><br>
 ### Create Integration Services
 
 This integration uses an integration services that need to be created on the "applications" event domain.
@@ -150,7 +150,7 @@ __To create the integration services:__
 5. Click the __Add New__ link again.
 
 
-
+<br><br><br>
 ## Configure the xMatters Integration Agent
 
 Now that you've configured xMatters On-Demand, it's time to configure the integration agent
@@ -158,6 +158,198 @@ Now that you've configured xMatters On-Demand, it's time to configure the integr
 The installation instructions below assume you already have a working xMatters integration agent.  If this is a new installation and you have not yet deployed the integration agent please follow this link to download, deploy, and configure:
 
 [Integration Agent for xMatters 5.x & xMatters On-Demand](https://support.xmatters.com/hc/en-us/articles/202370225)
+
+
+<br><br><br>
+### Install the Integration Service package
+
+The Cherwell Integration Service package contains all that you need to configure the Cherwell On-Premise integration to work with the integration agent.
+
+__To install the package:__
+
+1. Extract Cherwell Integration Service Package (Cherwell_IS_Package.zip) to get a folder named Cherwell_IS_Package. 
+
+2. Copy the __integrationservices/__ folder inside of __Cherwell_IS_Package__ folder to the installation directory of the integration agent: for example: C:\xMatters\integrationagent-5.1.5
+   * This folder is referred to as __<IAHOME>__ in the remainder of the instructions.
+
+3. Open the __<IAHOME>/conf/IAConfig.xml__ file and add the following line to the "__service-configs__" section (Around line 330):
+ 
+ ```
+<path>/applications/cherwell/cherwell.xml</path>
+ ```
+
+4. __Save__ and close the file.
+
+
+
+
+<br><br><br>
+## Configure Cherwell
+Now that you've configured xMatters, you can configure Cherwell to integrate with xMatters. The following sections require you to log into Cherwell and access the Configuration page.
+
+<br><br><br>
+### Create xMatters User in Cherwell
+
+Navigate to the CSM Administrator > Security menu and click Edit Users. Create a new user and note the Login ID and Password. Set the Security Group as "IT Service Desk Manager" to enable updating of Incident records. You can set the Security Group differently as long as the group has access to update appropriate tables.
+
+<br>
+<kbd>
+  <img src="media/mceclip1.png"  width="650">
+</kbd>
+
+
+<br><br><br>
+## Set up Cherwell API Client Key
+
+1. Go to CSM Administrator > Security menu, click Edit REST API client settings.
+
+2. Click the Green Plus Icon.
+
+3. Provide the following settings:
+
+__Name__: xMatters
+__Culture__: Default / English
+__Token Lifespan__: 20 minutes
+__Refresh Token Lifespan__: 1440 minutes
+__API Access is Enabled__: True
+__Allow Anonymous Access__: False
+
+<br>
+<kbd>
+  <img src="media/mceclip2.png">
+</kbd>
+<br><br>
+
+4. Take note of the Client Key you will need this when configuring the Integration Service Configuration.js file.
+
+
+<br><br><br>
+## Create Web Service to Trigger xMatters Integration Agent
+
+1. Open the Web Service Manager.
+     * From the CSM Administrator Main window, click the __Browser and Mobile__ category, and then click the __Web Service Manager__ task.
+     * From within a One-Step (create a One-Step > add a Call a Web Service One-Step Action), click the __Ellipses__ button <kbd><img src="media/ellipse.png"></kbd>.
+
+
+2. Select a __scope__ and subfolder (if needed) for the Web service.
+
+3. Click the __Create New__ button Create New Button.
+
+The Web Service Options window opens, displaying two pages (General and Methods; Accounts appears later if you select to use Basic Security).
+
+
+<br>
+<kbd>
+  <img src="media/wsdl.png">
+</kbd>
+
+4. Click the General page.
+
+5. Define general properties for the web service:
+
+__Name__: xMatters Integration Agent
+__Description__: Web Service for calling xMatters Integration Agent
+__Service Type__: WSDL (SOAP 1.1)
+__Security Type__: None 
+__WSDL URL:__ This will automatically populate
+__URL__: http://__Integration_Agent_URL__/http/applications_cherwell
+
+  * _URL should start with http://_
+  * _The Integration_Agent_URL should contain an ip address and a port number._
+     _Example: 178.19.1.32:8081_
+  * Integration_Agent_URL should include __/http/applications_cherwell__ at the end
+
+__Complete Web Service URL Should look as follows:__
+http://178.19.1.32:8081/http/applications_cherwell
+
+__The Integration Agent URL can be found by:__
+
+   a. Go to __DEVELOPER__ tab.
+   b. Click __Agents__.
+   c. Click __INSTALLED__ tab.
+   d. Click __Show Details__.
+
+<br>
+<kbd>
+  <img src="media/ia_details.png">
+</kbd>
+<br>
+
+6. Click the Methods page.
+
+<br>
+<kbd>
+  <img src="media/method_blank.png">
+</kbd>
+<br>
+
+7. Define a Web Service Method:
+
+   1. Click the Add... button to add a Method.
+
+   2. Define properties for the Methods:
+
+     __Name__: IntegrationServiceRequest
+     __Result Type__: None
+     __Request Type__: POST
+
+<br>
+<kbd>
+  <img src="media/ws_method.png">
+</kbd>
+<br>
+
+   3. Add a new Parameter to the Web Service Method by clicking:
+
+      1. Click Add...
+
+      2. Define properties for the Web Service Parameter:
+
+      __Name__: IntegrationServiceRequest
+      __Data Type__: Text
+      __Parm Type__: Standard
+
+<br>
+<kbd>
+  <img src="media/ws_parameter.png">
+</kbd>
+<br>
+
+
+       3. Click OK
+
+
+   4. Completed Web Service Method Should look as follows:
+
+<br>
+<kbd>
+  <img src="media/ws_method-complete.png">
+</kbd>
+<br>
+
+
+   5. Click OK.
+      This will close the Web Service Method dialogue.
+
+
+8. Completed Methods should look as follows:
+
+<br>
+<kbd>
+  <img src="media/we_method-complete.png">
+</kbd>
+<br>
+
+
+9. Click OK.
+   This will save a new Web Service Option with the name xMatters Integration Agent.
+
+<br><br><br>
+### Create a new Cherwell One-Step
+
+
+
+
 
 
 

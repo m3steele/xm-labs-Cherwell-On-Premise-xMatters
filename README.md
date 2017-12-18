@@ -208,10 +208,15 @@ Navigate to the CSM Administrator > Security menu and click Edit Users. Create a
 3. Provide the following settings:
 
 __Name__: xMatters
+
 __Culture__: Default / English
+
 __Token Lifespan__: 20 minutes
+
 __Refresh Token Lifespan__: 1440 minutes
+
 __API Access is Enabled__: True
+
 __Allow Anonymous Access__: False
 
 
@@ -249,10 +254,15 @@ The Web Service Options window opens, displaying two pages (General and Methods;
 5. Define general properties for the web service:
 
 __Name__: xMatters Integration Agent
+
 __Description__: Web Service for calling xMatters Integration Agent
+
 __Service Type__: WSDL (SOAP 1.1)
+
 __Security Type__: None 
+
 __WSDL URL:__ This will automatically populate
+
 __URL__: http://__Integration_Agent_URL__/http/applications_cherwell
 
   * _URL should start with http://_
@@ -265,10 +275,10 @@ http://178.19.1.32:8081/http/applications_cherwell
 <br><br>
 __The Integration Agent URL can be found by:__
 
-   1. Go to __DEVELOPER__ tab.
-   2. Click __Agents__.
-   3. Click __INSTALLED__ tab.
-   4. Click __Show Details__.
+      1. Go to __DEVELOPER__ tab.
+      2. Click __Agents__.
+      3. Click __INSTALLED__ tab.
+      4. Click __Show Details__.
 
 <br>
 <kbd>
@@ -291,7 +301,9 @@ __The Integration Agent URL can be found by:__
    2. Define properties for the Methods:
 
      __Name__: IntegrationServiceRequest
+
      __Result Type__: None
+
      __Request Type__: POST
 
 <br>
@@ -307,7 +319,9 @@ __The Integration Agent URL can be found by:__
       2. Define properties for the Web Service Parameter:
 
       __Name__: IntegrationServiceRequest
+
       __Data Type__: Text
+
       __Parm Type__: Standard
 
 <br>
@@ -346,6 +360,9 @@ __The Integration Agent URL can be found by:__
 
 <br><br><br>
 ### Create a new Cherwell One-Step
+
+
+
 
 
 

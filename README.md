@@ -61,7 +61,7 @@ Details of the installation go here.
 
 ## xMatters set up
 The first step in setting up your integration is to configure xMatters On-Demand.
-<br><br><br>
+<br><br>
 
 ### Create an integration user
 This integration requires a user who can authenticate REST web service calls when injecting events.
@@ -132,7 +132,7 @@ __To get a web service URL for an integration service:__
 <kbd>
   <img src="media/1_Integration URL.png"  width="478" height="294">
 </kbd>
-
+<br>
 You will need the URL for each integration service when configuring Cherwell.
 
 
@@ -187,7 +187,7 @@ __To install the package:__
 ## Configure Cherwell
 Now that you've configured xMatters, you can configure Cherwell to integrate with xMatters. The following sections require you to log into Cherwell and access the Configuration page.
 
-<br><br><br>
+<br><br>
 ### Create xMatters User in Cherwell
 
 Navigate to the CSM Administrator > Security menu and click Edit Users. Create a new user and note the Login ID and Password. Set the Security Group as "IT Service Desk Manager" to enable updating of Incident records. You can set the Security Group differently as long as the group has access to update appropriate tables.
@@ -213,6 +213,7 @@ __Token Lifespan__: 20 minutes
 __Refresh Token Lifespan__: 1440 minutes
 __API Access is Enabled__: True
 __Allow Anonymous Access__: False
+
 
 <br>
 <kbd>
@@ -261,19 +262,19 @@ __URL__: http://__Integration_Agent_URL__/http/applications_cherwell
 
 __Complete Web Service URL Should look as follows:__
 http://178.19.1.32:8081/http/applications_cherwell
-
+<br><br>
 __The Integration Agent URL can be found by:__
 
-   a. Go to __DEVELOPER__ tab.
-   b. Click __Agents__.
-   c. Click __INSTALLED__ tab.
-   d. Click __Show Details__.
+   1. Go to __DEVELOPER__ tab.
+   2. Click __Agents__.
+   3. Click __INSTALLED__ tab.
+   4. Click __Show Details__.
 
 <br>
 <kbd>
   <img src="media/ia_details.png">
 </kbd>
-<br>
+<br><br>
 
 6. Click the Methods page.
 
@@ -313,10 +314,9 @@ __The Integration Agent URL can be found by:__
 <kbd>
   <img src="media/ws_parameter.png">
 </kbd>
-<br>
+<br><br>
 
-
-       3. Click OK
+      3. Click OK
 
 
    4. Completed Web Service Method Should look as follows:
@@ -325,7 +325,7 @@ __The Integration Agent URL can be found by:__
 <kbd>
   <img src="media/ws_method-complete.png">
 </kbd>
-<br>
+<br><bR>
 
 
    5. Click OK.
@@ -338,7 +338,7 @@ __The Integration Agent URL can be found by:__
 <kbd>
   <img src="media/we_method-complete.png">
 </kbd>
-<br>
+<br><br>
 
 
 9. Click OK.

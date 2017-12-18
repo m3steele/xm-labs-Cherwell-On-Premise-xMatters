@@ -253,15 +253,11 @@ The Web Service Options window opens, displaying two pages (General and Methods;
 
 5. Define general properties for the web service:
 
-   > __Name__: xMatters Integration Agent
-
-   > __Description__: Web Service for calling xMatters Integration Agent
-
-   > __Service Type__: WSDL (SOAP 1.1)
-
-   > __Security Type__: None 
-
-   > __WSDL URL:__ This will automatically populate
+      1. __Name__: xMatters Integration Agent
+      2. __Description__: Web Service for calling xMatters Integration Agent
+      3. __Service Type__: WSDL (SOAP 1.1)
+      4. __Security Type__: None 
+      5. __WSDL URL:__ This will automatically populate
 
 __URL__: http://__Integration_Agent_URL__/http/applications_cherwell
 

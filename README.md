@@ -63,6 +63,10 @@ Details of the installation go here.
 The first step in setting up your integration is to configure xMatters On-Demand.
 
 
+
+
+
+
 ### Create an integration user
 This integration requires a user who can authenticate REST web service calls when injecting events.
 
@@ -101,7 +105,7 @@ For more information about creating users and devices in xMatters, refer to the 
 
 
 
-###Import the xMatters Communication Plan
+### Import the xMatters Communication Plan
 
 The next step is to import the communication plan.
 
@@ -119,7 +123,7 @@ To import the communication plan:
 
 
 
-###Accessing web service URLs
+### Accessing web service URLs
 
 Each integration service has its own URL that you can use to target it from Cherwell.
 
@@ -130,14 +134,14 @@ __To get a web service URL for an integration service:__
 3. If Authentication is required, click the Lock icon and note the username and password credentials. They will be needed later. 
 
 <kbd>
-  <img src="media/1_Integration URL.png">
+  <img src="media/1_Integration URL.png"  width="478" height="294">
 </kbd>
 
 You will need the URL for each integration service when configuring Cherwell.
 
 
 
-###Create Integration Services
+### Create Integration Services
 
 This integration uses an integration services that need to be created on the "applications" event domain.
 
@@ -151,7 +155,7 @@ __To create the integration services:__
 
 
 
-##Configure the xMatters Integration Agent
+## Configure the xMatters Integration Agent
 
 Now that you've configured xMatters On-Demand, it's time to configure the integration agent
 

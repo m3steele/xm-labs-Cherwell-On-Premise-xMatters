@@ -85,7 +85,7 @@ __Task Record Values:__
 
 <br><br>
 
-  <font color="red">See Integration Service Script cherwell.js Line 108 for instructions on how to add additional parameters.</font>
+  __See Integration Service Script cherwell.js Line 108 for instructions on how to add additional parameters.__
     
 
 <br><br><br>

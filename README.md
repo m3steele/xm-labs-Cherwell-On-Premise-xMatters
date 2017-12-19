@@ -552,6 +552,7 @@ You will need to follow this process TWICE. Once for __Initiating__ and once for
 
 
 <br>
+  
   _This step will define when the Onestep which sends a webhook to the xMatters Integration should takes place._
 
  _You can set the values of these based on your specific requirements._

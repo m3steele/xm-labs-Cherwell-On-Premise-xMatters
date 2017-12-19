@@ -21,12 +21,12 @@ Cherwell is a leading ITSM tool capable of advanced incident management. The int
 * Once an event is sent to xMatters Integraiton Agent a Cherwell REST API Get Incident and Get Task call allows for passing any incident or task field to xMatters. Included Communication Plan will need to be modified to accomodate any additional fields passed to xMatters.
 * A Cherwell webservice Onestep object or and Email can be used to trigger the xMatters event.
 * Parse Email Outbound Integration script included to break up email body for email initiated events.
-
+<br><br>
 The Cherwell (On-Premise) communication plan contains the following __inbound__ integrations:
 
 * __New Incident One Step__: This integration receives the HTTP POST from Integration Agent and builds the event payload. It will query to make sure the targeted recipient exists and, if not, will set the recipient to null, forcing the event to target the recipient in the New Incident form. 
 * __Terminate Events__: This integration parses the Incident ID and queries for all * active events in xMatters with that Incident ID and then terminates them. 
-
+<br><br>
 The communication plan also contains the following __outbound__ integrations:
 
 * __Event Delevery Notifications (IA)__: Updates the Incident Journal with devlivery information. This has been tested to work but has not been tested extensively.
@@ -44,8 +44,8 @@ The communication plan also contains the following __outbound__ integrations:
 * xMatters account - If you don't have one, [get one](https://www.xmatters.com)!
 
 # Files
-* [CherwellOnPremise.zip] - This the Cherwell On-Premise Communication plan.
-* [Cherwell_IntegrationServices.zip] - This the xMatters Integration Service for use with the Integration Agent.
+* [CherwellOnPremise.zip](CherwellOnPremise.zip) - This the Cherwell On-Premise Communication plan.
+* [Cherwell_IS_Package.zip](Cherwell_IS_Package.zip) - This the xMatters Integration Service for use with the Integration Agent.
 
 # How it works
 Out of the box, the integration uses a One Step to initiate a webservice call with the record id's from Cherwell Incident and Task records to the xMatters Integration Agent. The web service makes an HTTP POST to the Integration Agent, which generates the event payload and passes it to xMatters inbound integration. The Integration Agent uses Cherwell REST API to GET Incident and Task properties from Cherwell. This is used to avoid known bugs in cherwell webservice OneStep when fields contains certain special characters. After retreiving Cherwell property values, the New Incident One Stop inbound integration is targeted from the Integration Agent.  An Automation Process is used to kick off the Cherwell One Step automatically when specified criteria are met. This cam be customized to whatever criteria you see fit. This integration was designed for Automation Processes that kickoff for all Tasks related to Priority 1 and 2 Indicents.
@@ -167,10 +167,10 @@ The Cherwell Integration Service package contains all that you need to configure
 
 __To install the package:__
 
-1. Extract Cherwell Integration Service Package [Cherwell_IS_Package.zip] to get a folder named Cherwell_IS_Package. 
+1. Extract Cherwell Integration Service Package [Cherwell_IS_Package.zip](Cherwell_IS_Package.zip) to get a folder named integrationservices. 
 
-2. Copy the __integrationservices/__ folder inside of __Cherwell_IS_Package__ folder to the installation directory of the integration agent: for example: C:\xMatters\integrationagent-5.1.5
-   * This folder is referred to as __'<IAHOME>'__ in the remainder of the instructions.
+2. Copy the __integrationservices__ folder to the installation directory of the integration agent: for example: C:\xMatters\integrationagent-5.1.5
+   * This folder is referred to as ```<IAHOME>``` in the remainder of the instructions.
 
 3. Open the __<IAHOME>/conf/IAConfig.xml__ file and add the following line to the "__service-configs__" section (Around line 330):
  

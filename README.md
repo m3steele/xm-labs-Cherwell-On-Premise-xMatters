@@ -503,7 +503,8 @@ You will need to follow this process TWICE. Once for __Initiating__ and once for
     </kbd>
     <br><bR>
 
-3. Define __General__ Properties:
+3. Define __General__ Properties: <br>
+
 
     __Initiating xMatters Events__
 
@@ -525,12 +526,12 @@ You will need to follow this process TWICE. Once for __Initiating__ and once for
 
 
 <br>
-This step will define when the Onestep which sends a webhook to the xMatters Integration should takes place. 
-You can set the values of these based on your specific requirements. 
+    _This step will define when the Onestep which sends a webhook to the xMatters Integration should takes place._ 
+    _You can set the values of these based on your specific requirements._
 
-If you do not use Tasks as part of your incident notification process, you can modify the Automation Process to trigger off Incidents or whatever you desire.
+    _If you do not use Tasks as part of your incident notification process, you can modify the Automation Process to trigger off Incidents or whatever you desire._
 
-Keep in mind, changes may be required in the Integration Services Script if you change this from a Task trigger.
+    _Keep in mind, changes may be required in the Integration Services Script if you change this from a Task trigger._
 <br>
 <br>
 

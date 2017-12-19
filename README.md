@@ -57,9 +57,9 @@ After retreiving Cherwell property values, the New Incident One Stop inbound int
 Before creating the event, the integration builder script will check the Assigned Group set in Cherwell is not empty. If the Assigned Group is empty, xMatters will target a hard coded group defaulted to Service Desk. This group can be changed as required.
 
 This integration will initiate an xMatters Notification when an incident __Task Record__ is created. It will update assigned user to the Incident Task, not the Incident Record.
-<br>
+<br><br>
 
-<font color="red">See Integration Service Script cherwell.js Line 374 for instructions on how update incident record instead of task record when a user reponsonds to xMatter event.</font>
+__See Integration Service Script cherwell.js Line 374 for instructions on how update incident record instead of task record when a user reponsonds to xMatter event.__
 
 <br>
 
@@ -83,7 +83,7 @@ __Task Record Values:__
   * Assigned Group
   * Status
 
-<br>
+<br><br>
 
   <font color="red">See Integration Service Script cherwell.js Line 108 for instructions on how to add additional parameters.</font>
     

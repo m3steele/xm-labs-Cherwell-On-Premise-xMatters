@@ -54,27 +54,27 @@ Before creating the event, the integration builder script will check the Assigne
 
 This integration will initiate an xMatters Notification when an incident __Task Record__ is created. It will update assigned user to the Incident Task, not the Incident Record.
 
-
+<br>
 __The integration is set up to pass the following values from Cherwell to xMatters:__
 <br>
 
-  __Incident Record Values:__
-  * Incident ID
-  * Short Description
-  * Description
-  * Category
-  * Subcategory 
-  * Priority
-  * Service
+    __Incident Record Values:__
+    * Incident ID
+    * Short Description
+    * Description
+    * Category
+    * Subcategory 
+    * Priority
+    * Service
 
-  <br>
+    <br>
 
 
-__Task Record Values:__
-  * Task ID
-  * Assigned Group
-  * Status
-	
+  __Task Record Values:__
+    * Task ID
+    * Assigned Group
+    * Status
+    
 
 
 # Installation

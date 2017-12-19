@@ -477,7 +477,7 @@ __The Integration Agent URL can be found by:__
 
 <br>
 
-    3. Click __Save__ <kbd><img src="media/save.png"></kbd> Button (Top Left corner).
+  3. Click __Save__ <kbd><img src="media/save.png"></kbd> Button (Top Left corner).
 
 <br>
 

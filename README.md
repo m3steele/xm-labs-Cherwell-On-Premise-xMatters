@@ -555,13 +555,13 @@ Open the __configuration.js__ file found in the
 
 
 | Configuration Variable | Description |
-| ------------------------------- |:-----------------------------------------------------------------------------------------------------:|
+| ------------------------------- |-----------------------------------------------------------------------------------------------------|
 | WEB_SERVICE_URL                 | The Web Service URL of the "New Incident One Step" xMatters inbound integration (see [Accessing web service URLs](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#accessing-web-service-urls), above)|
 | XMATTERS_ONDEMAND               | The base URL of your xMatters instance. Do NOT include trailing slash. Example: https://company.xmatters.com |
 | WEB_SERVICE_TERMINATE_URL       | The Web Service URL of the "Terminate Events" xMatters inbound integration (see [Accessing web service URLs](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#accessing-web-service-urls), above)      |
 |                                 |       |
+|                                 |       |
 | __Cherwell Parameters__         |       |
-| ------------------------------- |:-----:|
 | The values in the _configureation.js_ file are most likely already correct. It is advised however to double check these values. |
 |                                 |       |
 | CHERWELL_JOURNAL_TYPEID         | Replace with Your Cherwell Journal TypeID if it is different           |

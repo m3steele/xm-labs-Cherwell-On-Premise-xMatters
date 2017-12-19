@@ -59,23 +59,21 @@ __The integration is set up to pass the following values from Cherwell to xMatte
 <br>
 
   __Incident Record Values:__
-
   * Incident ID
   * Short Description
-	* Description
-	* Category
+  * Description
+  * Category
   * Subcategory 
   * Priority
-	* Service
+  * Service
 
   <br>
 
 
 __Task Record Values:__
-
   * Task ID
   * Assigned Group
-	* Status
+  * Status
 	
 
 

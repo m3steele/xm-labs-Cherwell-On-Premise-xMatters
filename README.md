@@ -380,12 +380,12 @@ __The Integration Agent URL can be found by:__
 
 3. Select a Business Object Association: __Incident__
 
-  <kbd>
-    <img src="media/business-object.png">
-  </kbd>
-  <br><bR>
+      <kbd>
+        <img src="media/business-object.png">
+      </kbd>
+      <br><bR>
 
-4. Click the __Create New__ button Create <kbd><img src="media/newnew.png"> </kbd>.
+4. Click the __Create New__ button Create <kbd><img src="media/new.png"> </kbd>.
 
 
 5. Provide a __Name__ and __Description__ for the One-Step.
@@ -393,11 +393,10 @@ __The Integration Agent URL can be found by:__
     * __Name__: xMatters Integration Agent
     * __Description__: Trigger xMatters Integration Agent Web Service
 
-    <br>
-  <kbd>
-    <img src="media/create-one-step.png">
-  </kbd>
-  <br><bR>
+        <kbd>
+          <img src="media/create-one-step.png">
+        </kbd>
+        <br><bR>
 
 6. Click __OK__.
 
@@ -415,18 +414,18 @@ __The Integration Agent URL can be found by:__
 
 8. Add a __Call a Web Service Action__ to the Designer Board.
 
-  Advanced Actions -> Call a Web Service
-<br>
-  <kbd>
-    <img src="media/call_web_service.png">
-  </kbd>
-  <br><bR>
-  __The One Step should look as follows:__
-  <br>
-  <kbd>
-    <img src="media/call_web_sone-step-ws.png">
-  </kbd>
-  <br><bR>
+      Advanced Actions -> Call a Web Service
+      <br>
+      <kbd>
+        <img src="media/call_web_service.png">
+      </kbd>
+      <br><bR>
+      __The One Step should look as follows:__
+      <br>
+      <kbd>
+        <img src="media/one-step-ws.png">
+      </kbd>
+      <br><bR>
 
 9. __Select__ the Call a Web Service Action.
 
@@ -434,14 +433,14 @@ __The Integration Agent URL can be found by:__
 
 11. __Define__ the __General__ properties for the Call a Web Service Action.
 
- * __Name__: Call a xMatters Web Service
-  * __Service__:  Click the __Ellipses__ button <kbd><img src="media/ellipse.png"></kbd> then select the __xMatters Integration Agent__ Web Service we created earlier. 
+    * __Name__: Call a xMatters Web Service
+    * __Service__:  Click the __Ellipses__ button <kbd><img src="media/ellipse.png"></kbd> then select the __xMatters Integration Agent__ Web Service we created earlier. 
   See: [Create Web Service to Trigger xMatters](https://xperts.xmatters.com/hc/en-us/articles/115003066346-Cherwell-On-Premise-Integration#cherwell_wb)
-  <br>
-  <kbd>
-    <img src="media/one-step-details.png">
-  </kbd>
-  <br><bR>
+    <br>
+    <kbd>
+      <img src="media/one-step-details.png">
+    </kbd>
+    <br><bR>
 
 12. Click the __Method__ Page.
 
@@ -466,15 +465,15 @@ __The Integration Agent URL can be found by:__
       ```
 
       __Important Note__: 
-        * The values inside of ```<>``` MUST REMAIN exactly as they are above. 
-        * If these values are modified, the Integration Agent Script will need to be modified.
-        * You may need to change the Reference Tokens (```<>Reference.Token</>```) if their reference names have been changed in your Cherwell environment.
+      * The values inside of ```<>``` MUST REMAIN exactly as they are above. 
+      * If these values are modified, the Integration Agent Script will need to be modified.
+      * You may need to change the Reference Tokens (```<>Reference.Token</>```) if their reference names have been changed in your Cherwell environment.
           You can do this with the __Selector__ button <kbd><img src="media/selector.png"></kbd>. Make sure 
 
     3. Click __Save__ <kbd><img src="media/save.png"></kbd> Button (Top Left corner).
 
 
-16. Click OK (Bottom Right corner).
+16. Click __OK__ (Bottom Right corner).
 
    The One-Step will be Save and return you to the One-Step manager where you will see the new One-Step.
 

@@ -474,10 +474,10 @@ __The Integration Agent URL can be found by:__
       * If these values are modified, the integration service script will need to be modified.
       * You will need to insert the Cherwell Reference Tokens ```<>Reference.Token</>``` yourself. Copy and pasting the value from above to Cherwell will not work.
         * You can insert a Cherwell Reference Token with the __Selector__ button <kbd><img src="media/selector.png"></kbd>.
-
-<br>
-
-  3. Click __Save__ <kbd><img src="media/save.png"></kbd> Button (Top Left corner).
+    
+    <br>
+    
+    3. Click __Save__ <kbd><img src="media/save.png"></kbd> Button (Top Left corner).
 
 <br>
 

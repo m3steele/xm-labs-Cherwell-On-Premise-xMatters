@@ -402,7 +402,7 @@ __The Integration Agent URL can be found by:__
 
       The One-Step Editor opens.
 
-
+<br>
 7. Define Conditions for when you want this one step to run. 
 
       _It is recommended to leave these settings along as an Automation Blueprint will be used to trigger the one-step._
@@ -571,7 +571,7 @@ Open the __configuration.js__ file found in the
 | CHERWELL_SERVER                 | The base URL of your Cherwell On-Premise Server. Do not inlude trailing slashes.                                |
 |                                 |       |
 | __Webservice Parameters__       |       |
-| ------------------------------- |:-----:|
+|                                 |       |
 | INITIATOR                       | The User ID of the REST API user you created in xMatters. (see [Create an Integration User](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#create-an-integration-user), above).      |
 | PASSWORD                        | Path and filename of the password file containing the encrypted REST API user's password. <br><br> For more information about creating this file, refer to the [xMatters integration agent guide](https://support.xmatters.com/hc/en-us/articles/202004275).<br><br> The password is what was set in [Create an Integration User](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#create-an-integration-user), above.     |
 | CHERWELL_WS_ID                  | The Cherwell API Client Key (see [Set up Cherwell API Client Key](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#set-up-cherwell-api-client-key), above).      |

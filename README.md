@@ -108,7 +108,7 @@ The next step is to import the communication plan.
 To import the communication plan:
 
 1. In the target xMatters system, on the __Developer__ tab, click __Import Plan__.
-2. Click __Browse__, and then locate the downloaded communication plan: [CherwellOnPremise.zip]
+2. Click __Browse__, and then locate the downloaded communication plan: [CherwellOnPremise.zip](CherwellOnPremise.zip)
 3. Click __Import Plan__.
 4. Once the communication plan has been imported, click __Plan Disabled__ to enable the plan.
 5. In the __Edit__ drop-down list, select __Forms__.
@@ -207,14 +207,14 @@ Navigate to the CSM Administrator > Security menu and click Edit Users. Create a
 
 3. Provide the following settings:
 
-    ```
-    Name: xMatters
-    Culture: Default / English
+    
+    >__Name__: xMatters
+    >__Culture__: Default / English
     Token Lifespan: 20 minutes
     Refresh Token Lifespan: 1440 minutes
     API Access is Enabled: True
     Allow Anonymous Access: False
-    ```
+    
 
 <br>
 <kbd>

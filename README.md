@@ -434,15 +434,13 @@ __The Integration Agent URL can be found by:__
 11. __Define__ the __General__ properties for the Call a Web Service Action.
 
     * __Name__: Call a xMatters Web Service
-    * __Service__:  Click the __Ellipses__ button <kbd><img src="media/ellipse.png"></kbd> then select the __xMatters Integration Agent__ Web Service we created earlier. 
-  See: [Create Web Service to Trigger xMatters][Create Web Service to Trigger xMatters]
-  
-  [Create Web Service to Trigger xMatters](https://xperts.xmatters.com/hc/en-us/articles/115003066346-Cherwell-On-Premise-Integration#cherwell_wb)
-    <br>
-    <kbd>
-      <img src="media/one-step-details.png">
-    </kbd>
-    <br><bR>
+    * __Service__:  Click the __Ellipses__ button <kbd><img src="media/ellipse.png"></kbd> then select the __xMatters Integration Agent__ Web Service we created earlier.
+        See: [Create Web Service to Trigger xMatters](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#create-web-service-to-trigger-xmatters-integration-agent)
+        <br>
+        <kbd>
+          <img src="media/one-step-details.png">
+        </kbd>
+        <br><bR>
 
 12. Click the __Method__ Page.
 
@@ -467,10 +465,10 @@ __The Integration Agent URL can be found by:__
       ```
 
       __Important Note__: 
-      * The values inside of ```<>``` MUST REMAIN exactly as they are above. 
+      * The values inside of ```<>``` MUST REMAIN exactly as they are above. These are referenced in the integration service script
       * If these values are modified, the Integration Agent Script will need to be modified.
-      * You may need to change the Reference Tokens (```<>Reference.Token</>```) if their reference names have been changed in your Cherwell environment.
-          You can do this with the __Selector__ button <kbd><img src="media/selector.png"></kbd>. Make sure 
+      * You will need to insert the Cherwell Reference Tokens (```<>Reference.Token</>```) yourself. Copy and pasting the value from above to Cherwell will not work.
+        * You can insert a Cherwell Reference Token with the __Selector__ button <kbd><img src="media/selector.png"></kbd>.
 
     3. Click __Save__ <kbd><img src="media/save.png"></kbd> Button (Top Left corner).
 
@@ -480,12 +478,108 @@ __The Integration Agent URL can be found by:__
    The One-Step will be Save and return you to the One-Step manager where you will see the new One-Step.
 
 
+<br><br><br>
+## Create an Automation Process for __Initiating__ and __Terminating__ xMatters events. 
+
+You will need to follow this process TWICE. Once for __Initiating__ and once for __Terminating__ xMatters events.
+
+1. From the __CSM Administrator__ main window, click the __Automation Process__ category and then click __Create a New Automation Process Blueprint__.
+
+2. Click the __New__ button <kbd><img src="media/new-button.png"></kbd> and select __Simple Action/Event Process__.
+
+    The Simple/Event Process window opens.
+
+    <br>
+    <kbd>
+      <img src="media/simple-action.png">
+    </kbd>
+    <br><bR>
+
+3. Define __General__ Properties:
+
+    __Initiating xMatters Events__
+
+    * __Name__: xMatters Notify Team on Incident
+    * __Description__: Initiate xMatters Integration Agent One-Step to notify with xMatters.
+    * __Business Object__: Task
+    * __Execution Priority__: Normal / Your preference
+    * __Event__: Task Created
+
+    __Terminating xMatters Events__
+
+    * __Name__: xMatters Task Resolver Found
+    * __Description__: Intiate xMatters Integration Agent One-Step to terminate xMatters event.
+    * __Business Object:__ Task
+    * __Execution Priority__: Normal / Your preference
+    * __Event__: Task Status Changed / Task User Assigned
 
 
+This step will define when the Onestep which sends a webhook to the xMatters Integration should takes place. 
+You can set the values of these based on your specific requirements. 
+
+If you do not use Tasks as part of your incident notification process, you can modify the Automation Process to trigger off Incidents or whatever you desire.
+
+Keep in mind, changes may be required in the Integration Services Script if you change this from a Task trigger.
 
 
+4. Define __Limit Records__ section.
+
+    Limit when the xMatters integration is triggered. 
+
+    For further information on how to limit records that trigger automation process see Cherwell Documentation [here](https://cherwellsupport.com/webhelp/en/8.0/22026.htm).
+
+5. Click __Action page__.
+    <br>
+    <kbd>
+      <img src="media/action-page.png">
+    </kbd>
+    <br><bR>
+
+6. __Define__ a __One-Step__ to run when the event takes place:
+
+    1. Select the One-Step radio button.
+      The One-Step Field and Ellipses button become active.
+
+    2. Click the __Ellipses__ button <kbd><img src="media/ellipse.png"></kbd> to open the One-Step Manager, and then select xMatters Integration Agent One-Step created previously. 
+    See: [Create a new Cherwell One-Step](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#create-a-new-cherwell-one-step)
+
+7. Click __OK__.
+    
+
+<br><br><br>
+## Configure the Integration Service Package
+
+Open the __configuration.js__ file found in the
+
+```<IAHOME>\integrationservices\applications\cherwell``` folder and set the values for the following variables:
 
 
+| Configuration Variable | Description |
+| ------------------------------- |:-----------------------------------------------------------------------------------------------------:|
+| WEB_SERVICE_URL                 | The Web Service URL of the "New Incident One Step" xMatters inbound integration (see [Accessing web service URLs](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#accessing-web-service-urls), above)|
+| XMATTERS_ONDEMAND               | The base URL of your xMatters instance. Do NOT include trailing slash. Example: https://company.xmatters.com |
+| WEB_SERVICE_TERMINATE_URL       | The Web Service URL of the "Terminate Events" xMatters inbound integration (see [Accessing web service URLs](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#accessing-web-service-urls), above)      |
+|                                 |       |
+| __Cherwell Parameters__         |       |
+| ------------------------------- |:-----:|
+| The values in the _configureation.js_ file are most likely already correct. It is advised however to double check these values. |
+|                                 |       |
+| CHERWELL_JOURNAL_TYPEID         | Replace with Your Cherwell Journal TypeID if it is different           |
+| CHERWELL_JOURNAL_TYPENAME       | Replace with Cherwell Journal Type Name if it is different             |
+| CHERWELL_INCIDENT_OBJID         | Replace with Cherwell Incident Business Object ID if it is different   |
+| CHERWELL_TASK_OBJID             | Replace with Cherwell Task Business Object ID if it is different       |
+| CHERWELL_SERVER                 | The base URL of your Cherwell On-Premise Server. Do not inlude trailing slashes.                                |
+|                                 |       |
+| __Webservice Parameters__       |       |
+| ------------------------------- |:-----:|
+| INITIATOR                       | The User ID of the REST API user you created in xMatters. (see [Create an Integration User](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#create-an-integration-user), above).      |
+| PASSWORD                        | Path and filename of the password file containing the encrypted REST API user's password. <br><br> For more information about creating this file, refer to the [xMatters integration agent guide](https://support.xmatters.com/hc/en-us/articles/202004275).<br><br> The password is what was set in [Create an Integration User](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#create-an-integration-user), above.     |
+| CHERWELL_WS_ID                  | The Cherwell API Client Key (see [Set up Cherwell API Client Key](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#set-up-cherwell-api-client-key), above).      |
+| CHERWELL_WS_USER                | The Cherwell User Name created so xMatters can authenticate into Cherwell (see [Create xMatters User in Cherwell](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#create-xmatters-user-in-cherwell), above).      |
+| CHERWELL_WS_PASSWORD            | The Cherwell User Password created so xMatters can authenticate into Cherwell (see [Create xMatters User in Cherwell](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#create-xmatters-user-in-cherwell), above).      |
+
+
+<br><br><br><br><br><br><br><br><br><br><br>
 
 
 

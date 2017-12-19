@@ -435,7 +435,9 @@ __The Integration Agent URL can be found by:__
 
     * __Name__: Call a xMatters Web Service
     * __Service__:  Click the __Ellipses__ button <kbd><img src="media/ellipse.png"></kbd> then select the __xMatters Integration Agent__ Web Service we created earlier. 
-  See: [Create Web Service to Trigger xMatters](https://xperts.xmatters.com/hc/en-us/articles/115003066346-Cherwell-On-Premise-Integration#cherwell_wb)
+  See: [Create Web Service to Trigger xMatters][Create Web Service to Trigger xMatters]
+  
+  [Create Web Service to Trigger xMatters](https://xperts.xmatters.com/hc/en-us/articles/115003066346-Cherwell-On-Premise-Integration#cherwell_wb)
     <br>
     <kbd>
       <img src="media/one-step-details.png">

@@ -513,6 +513,8 @@ You will need to follow this process TWICE. Once for __Initiating__ and once for
     * __Execution Priority__: Normal / Your preference
     * __Event__: Task Created
 
+    <br>
+
     __Terminating xMatters Events__
 
     * __Name__: xMatters Task Resolver Found
@@ -522,13 +524,15 @@ You will need to follow this process TWICE. Once for __Initiating__ and once for
     * __Event__: Task Status Changed / Task User Assigned
 
 
+<br>
 This step will define when the Onestep which sends a webhook to the xMatters Integration should takes place. 
 You can set the values of these based on your specific requirements. 
 
 If you do not use Tasks as part of your incident notification process, you can modify the Automation Process to trigger off Incidents or whatever you desire.
 
 Keep in mind, changes may be required in the Integration Services Script if you change this from a Task trigger.
-
+<br>
+<br>
 
 4. Define __Limit Records__ section.
 
@@ -550,6 +554,7 @@ Keep in mind, changes may be required in the Integration Services Script if you 
 
     2. Click the __Ellipses__ button <kbd><img src="media/ellipse.png"></kbd> to open the One-Step Manager, and then select xMatters Integration Agent One-Step created previously. 
     See: [Create a new Cherwell One-Step](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#create-a-new-cherwell-one-step)
+<br>
 
 7. Click __OK__.
     

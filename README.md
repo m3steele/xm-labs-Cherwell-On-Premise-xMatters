@@ -55,6 +55,30 @@ Before creating the event, the integration builder script will check the Assigne
 This integration will initiate an xMatters Notification when an incident __Task Record__ is created. It will update assigned user to the Incident Task, not the Incident Record.
 
 
+__The integration is set up to pass the following values from Cherwell to xMatters:__
+<br>
+
+  __Incident Record Values:__
+
+  * Incident ID
+  * Short Description
+	* Description
+	* Category
+  * Subcategory 
+  * Priority
+	* Service
+
+  <br>
+
+
+__Task Record Values:__
+
+  * Task ID
+  * Assigned Group
+	* Status
+	
+
+
 # Installation
 Details of the installation go here. 
 <br><br>
@@ -526,13 +550,13 @@ You will need to follow this process TWICE. Once for __Initiating__ and once for
 
 
 <br>
-  This step will define when the Onestep which sends a webhook to the xMatters Integration should takes place.
+  _This step will define when the Onestep which sends a webhook to the xMatters Integration should takes place._
 
-  You can set the values of these based on your specific requirements.
+ _You can set the values of these based on your specific requirements._
 
-  If you do not use Tasks as part of your incident notification process, you can modify the Automation Process to trigger off Incidents or whatever you desire.
+  _If you do not use Tasks as part of your incident notification process, you can modify the Automation Process to trigger off Incidents or whatever you desire._
 
-  Keep in mind, changes may be required in the Integration Services Script if you change this from a Task trigger.
+  _Keep in mind, changes may be required in the Integration Services Script if you change this from a Task trigger._
 <br>
 <br>
 
@@ -541,6 +565,7 @@ You will need to follow this process TWICE. Once for __Initiating__ and once for
     Limit when the xMatters integration is triggered. 
 
     For further information on how to limit records that trigger automation process see Cherwell Documentation [here](https://cherwellsupport.com/webhelp/en/8.0/22026.htm).
+    <br>
 
 5. Click __Action page__.
     <br>
@@ -594,83 +619,7 @@ Open the __configuration.js__ file found in the
 | CHERWELL_WS_PASSWORD            | The Cherwell User Password created so xMatters can authenticate into Cherwell (see [Create xMatters User in Cherwell](https://github.com/m3steele/xm-labs-Cherwell-On-Premise-xMatters#create-xmatters-user-in-cherwell), above).      |
 
 
-<br><br><br><br><br><br><br><br><br><br><br>
 
 
 
 
-
-
-
-
-
-
-
-
-      IncidentRecord = getIncidentRecord (event.properties['Incident ID']);
-
- IALOG.info("IncidentRecord Returned: " + JSON.stringify(IncidentRecord));
-
-	event.properties['Short Description'] = IncidentRecord.fields[182].value;
-	event.properties.Description = IncidentRecord.fields[12].value;
-	event.properties.Category =  IncidentRecord.fields[9].value;
-   	event.properties.Subcategory = IncidentRecord.fields[10].value;
-   	event.properties.Priority = IncidentRecord.fields[15].value;
-	event.properties.Service = IncidentRecord.fields[8].value;
-	event.properties['IT Performance Issue'] = IncidentRecord.fields[221].value;
-	event.properties['Major Incident'] = IncidentRecord.fields[167].value;
-
-
-// ***
-// B. Get Task
-// ***
-
-TastRecord = getTaskRecord (event.properties['Task ID']);
-
-
-IALOG.info("TaskRecord Returned: " + JSON.stringify(TastRecord));
-
-	event.properties['Assigned Group'] = TastRecord.fields[8].value;
-	event.properties.Status = TastRecord.fields[60].value;
-	
-
-      <short_description>Incident.Short Description</short_description>
-      <description>Incident.Description</description>
-      <service>Incident.Service</service>
-      <category>Incident.Category</category>
-      <subcategory>Incident.Subcategory</subcategory>
-      <priority>Incident.Priority</priority>
-      <owned_by>Incident.Owned By</owned_by>
-      <assigned_group>Incident.Owned By Team</assigned_group><status>Incident.Status</status>
-
-
-
-
-2. Add this code to some place on what page:
-   ```
-   var items = [];
-   items.push( { "stuff": "value"} );
-   console.log( 'Do stuff' );
-   ```
-
-
-## Application ABC set up
-Any specific steps for setting up the target application? The more precise you can be, the better!
-
-Images are encouraged. Adding them is as easy as:
-```
-<kbd>
-  <img src="media/cat-tax.png" width="200" height="400">
-</kbd>
-```
-
-<kbd>
-  <img src="media/cat-tax.png" width="200" height="400">
-</kbd>
-
-
-# Testing
-Be specific. What should happen to make sure this code works? What would a user expect to see? 
-
-# Troubleshooting
-Optional section for how to troubleshoot. Especially anything in the source application that an xMatters developer might not know about, or specific areas in xMatters to look for details - like the Activity Stream? 

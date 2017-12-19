@@ -209,6 +209,7 @@ Navigate to the CSM Administrator > Security menu and click Edit Users. Create a
 
     
     >__Name__: xMatters
+    <br>
     >__Culture__: Default / English
     Token Lifespan: 20 minutes
     Refresh Token Lifespan: 1440 minutes

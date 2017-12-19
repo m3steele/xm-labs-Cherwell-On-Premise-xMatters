@@ -132,7 +132,7 @@ __To get a web service URL for an integration service:__
 <kbd>
   <img src="media/1_Integration URL.png"  width="478" height="294">
 </kbd>
-<br>
+<br><br>
 You will need the URL for each integration service when configuring Cherwell.
 
 
@@ -167,10 +167,10 @@ The Cherwell Integration Service package contains all that you need to configure
 
 __To install the package:__
 
-1. Extract Cherwell Integration Service Package (Cherwell_IS_Package.zip) to get a folder named Cherwell_IS_Package. 
+1. Extract Cherwell Integration Service Package [Cherwell_IS_Package.zip] to get a folder named Cherwell_IS_Package. 
 
 2. Copy the __integrationservices/__ folder inside of __Cherwell_IS_Package__ folder to the installation directory of the integration agent: for example: C:\xMatters\integrationagent-5.1.5
-   * This folder is referred to as __<IAHOME>__ in the remainder of the instructions.
+   * This folder is referred to as __'<IAHOME>'__ in the remainder of the instructions.
 
 3. Open the __<IAHOME>/conf/IAConfig.xml__ file and add the following line to the "__service-configs__" section (Around line 330):
  

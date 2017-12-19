@@ -58,8 +58,8 @@ Before creating the event, the integration builder script will check the Assigne
 
 This integration will initiate an xMatters Notification when an incident __Task Record__ is created. It will update assigned user to the Incident Task, not the Incident Record.
 
-
-_See Integration Service Script __cherwell.js__ Line 374 for instructions on how update incident record instead of task record when a user reponsonds to xMatter event._
+<br>
+__See Integration Service Script cherwell.js Line 374 for instructions on how update incident record instead of task record when a user reponsonds to xMatter event.__
 
 <br>
 
@@ -83,7 +83,8 @@ __Task Record Values:__
   * Assigned Group
   * Status
 
-  See Integration Service Script __cherwell.js__ Line 108 for instructions on how to add additional parameters.
+<br>
+  __See Integration Service Script cherwell.js Line 108 for instructions on how to add additional parameters.__
     
 
 <br><br><br>

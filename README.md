@@ -53,8 +53,8 @@ Out of the box, the integration uses a One Step to initiate a webservice call wi
 Before creating the event, the integration builder script will check the Assigned Group set in Cherwell is not empty. If the Assigned Group is empty, xMatters will target a hard coded group defaulted to Service Desk. This group can be changed as required.
 
 This integration will initiate an xMatters Notification when an incident __Task Record__ is created. It will update assigned user to the Incident Task, not the Incident Record.
-
 <br>
+
 __The integration is set up to pass the following values from Cherwell to xMatters:__
 <br>
 
@@ -76,7 +76,7 @@ __Task Record Values:__
   * Status
     
 
-
+<br><br><br>
 # Installation
 Details of the installation go here. 
 <br><br>

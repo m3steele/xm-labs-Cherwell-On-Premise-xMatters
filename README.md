@@ -430,7 +430,11 @@ __The Integration Agent URL can be found by:__
 
 9. __Select__ the Call a Web Service Action.
 
+<br>
+
 10. Click __General__ page.
+
+<br>
 
 11. __Define__ the __General__ properties for the Call a Web Service Action.
 
@@ -466,17 +470,20 @@ __The Integration Agent URL can be found by:__
       ```
 
       __Important Note__: 
-      * The values inside of ```<>``` MUST REMAIN exactly as they are above. These are referenced in the integration service script
-      * If these values are modified, the Integration Agent Script will need to be modified.
-      * You will need to insert the Cherwell Reference Tokens (```<>Reference.Token</>```) yourself. Copy and pasting the value from above to Cherwell will not work.
+      * The values inside of ```<>``` MUST REMAIN exactly as they are above. These are referenced in the integration service script.
+      * If these values are modified, the integration service script will need to be modified.
+      * You will need to insert the Cherwell Reference Tokens ```<>Reference.Token</>``` yourself. Copy and pasting the value from above to Cherwell will not work.
         * You can insert a Cherwell Reference Token with the __Selector__ button <kbd><img src="media/selector.png"></kbd>.
+
+<br>
 
     3. Click __Save__ <kbd><img src="media/save.png"></kbd> Button (Top Left corner).
 
+<br>
 
 16. Click __OK__ (Bottom Right corner).
 
-   The One-Step will be Save and return you to the One-Step manager where you will see the new One-Step.
+     The One-Step will be Save and return you to the One-Step manager where you will see the new One-Step.
 
 
 <br><br><br>

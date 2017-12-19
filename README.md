@@ -353,6 +353,130 @@ __The Integration Agent URL can be found by:__
 <br><br><br>
 ### Create a new Cherwell One-Step
 
+1. Open the One-Step Manager:
+    
+  From the __CSM Desktop Client menu bar__, click __One-Step > One-Step Manager__.
+  <br>
+  <kbd>
+    <img src="media/9982.png">
+  </kbd>
+  <br><bR>
+
+  From the __Browser Client menu bar__, click __One-Step > One-Step Manager__.
+  <br>
+  <kbd>
+    <img src="media/13547.png">
+  </kbd>
+  <br><bR>
+
+  From the __Blueprint Editor menu bar___ in CSM Administrator, click __Managers > One-Step__.
+<br>
+  <kbd>
+    <img src="media/menu.png">
+  </kbd>
+  <br><bR>
+
+2. Select __Global__ scope.
+
+3. Select a Business Object Association: __Incident__
+<br>
+  <kbd>
+    <img src="media/business-object.png">
+  </kbd>
+  <br><bR>
+
+4. Click the __Create New__ button Create <kbd><img src="media/3568.png"> </kbd>.
+
+
+5. rovide a __Name__ and __Description__ for the One-Step.
+
+    * __Name__: xMatters Integration Agent
+    * __Description__: Trigger xMatters Integration Agent Web Service
+
+    <br>
+  <kbd>
+    <img src="media/create-one-step.png">
+  </kbd>
+  <br><bR>
+
+6. Click __OK__.
+
+  The One-Step Editor opens.
+
+
+7. Define Conditions for when you want this one step to run. 
+
+  _It is recommended to leave these settings along as an Automation Blueprint will be used to trigger the one-step._
+  <br>
+  <kbd>
+    <img src="media/conditions.png">
+  </kbd>
+  <br><bR>
+
+8. Add a __Call a Web Service Action__ to the Designer Board.
+
+  Advanced Actions -> Call a Web Service
+<br>
+  <kbd>
+    <img src="media/call_web_service.png">
+  </kbd>
+  <br><bR>
+  __The One Step should look as follows:__
+  <br>
+  <kbd>
+    <img src="media/call_web_sone-step-ws.png">
+  </kbd>
+  <br><bR>
+
+9. __Select__ the Call a Web Service Action.
+
+10. Click __General__ page.
+
+11. __Define__ the __General__ properties for the Call a Web Service Action.
+
+ * __Name__: Call a xMatters Web Service
+  * __Service__:  Click the __Ellipses__ button <kbd><img src="media/ellipse.png"></kbd> then select the __xMatters Integration Agent__ Web Service we created earlier. 
+  See: [Create Web Service to Trigger xMatters](https://xperts.xmatters.com/hc/en-us/articles/115003066346-Cherwell-On-Premise-Integration#cherwell_wb)
+  <br>
+  <kbd>
+    <img src="media/one-step-details.png">
+  </kbd>
+  <br><bR>
+
+12. Click the __Method__ Page.
+
+13. __Specify__ the Method to call on the web service:
+
+    * In the Method drop-down, select __IntegrationServiceRequest__.
+      * _The Parameters tree will show all the parameters for the selected method_.
+
+14. __Select__ IntegrationServiceRequest in the Parameter tree.
+
+15. __Define__ the IntegrationServiceRequest Method Parameter:
+
+    1. Select __Set Value__.
+
+    2. Specify the following Value:
+
+      ```
+      <Incident_Rec_ID>Incident.RecID</Incident_Rec_ID>
+      <Incident_ID>Incident.Incident ID</Incident_ID>
+      <Task_Rec_ID>Task.RecID</Task_Rec_ID>
+      <Task_Rec_ID>Task.Task ID</Task_Rec_ID>
+      ```
+
+      __Important Note__: 
+        * The values inside of ```<>``` MUST REMAIN exactly as they are above. 
+        * If these values are modified, the Integration Agent Script will need to be modified.
+        * You may need to change the Reference Tokens (```<>Reference.Token</>```) if their reference names have been changed in your Cherwell environment.
+          You can do this with the __Selector__ button <kbd><img src="media/selector.png"></kbd>. Make sure 
+
+    3. Click __Save__ <kbd><img src="media/save.png"></kbd> Button (Top Left corner).
+
+
+16. Click OK (Bottom Right corner).
+
+   The One-Step will be Save and return you to the One-Step manager where you will see the new One-Step.
 
 
 
@@ -368,6 +492,46 @@ __The Integration Agent URL can be found by:__
 
 
 
+
+
+
+
+
+      IncidentRecord = getIncidentRecord (event.properties['Incident ID']);
+
+ IALOG.info("IncidentRecord Returned: " + JSON.stringify(IncidentRecord));
+
+	event.properties['Short Description'] = IncidentRecord.fields[182].value;
+	event.properties.Description = IncidentRecord.fields[12].value;
+	event.properties.Category =  IncidentRecord.fields[9].value;
+   	event.properties.Subcategory = IncidentRecord.fields[10].value;
+   	event.properties.Priority = IncidentRecord.fields[15].value;
+	event.properties.Service = IncidentRecord.fields[8].value;
+	event.properties['IT Performance Issue'] = IncidentRecord.fields[221].value;
+	event.properties['Major Incident'] = IncidentRecord.fields[167].value;
+
+
+// ***
+// B. Get Task
+// ***
+
+TastRecord = getTaskRecord (event.properties['Task ID']);
+
+
+IALOG.info("TaskRecord Returned: " + JSON.stringify(TastRecord));
+
+	event.properties['Assigned Group'] = TastRecord.fields[8].value;
+	event.properties.Status = TastRecord.fields[60].value;
+	
+
+      <short_description>Incident.Short Description</short_description>
+      <description>Incident.Description</description>
+      <service>Incident.Service</service>
+      <category>Incident.Category</category>
+      <subcategory>Incident.Subcategory</subcategory>
+      <priority>Incident.Priority</priority>
+      <owned_by>Incident.Owned By</owned_by>
+      <assigned_group>Incident.Owned By Team</assigned_group><status>Incident.Status</status>
 
 
 

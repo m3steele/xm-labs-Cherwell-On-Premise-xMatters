@@ -355,40 +355,40 @@ __The Integration Agent URL can be found by:__
 
 1. Open the One-Step Manager:
     
-  From the __CSM Desktop Client menu bar__, click __One-Step > One-Step Manager__.
-  <br>
-  <kbd>
-    <img src="media/9982.png">
-  </kbd>
-  <br><bR>
+      From the __CSM Desktop Client menu bar__, click __One-Step > One-Step Manager__.
+      <br>
+      <kbd>
+        <img src="media/cherwell-menu.png">
+      </kbd>
+      <br><bR>
 
-  From the __Browser Client menu bar__, click __One-Step > One-Step Manager__.
-  <br>
-  <kbd>
-    <img src="media/13547.png">
-  </kbd>
-  <br><bR>
+      From the __Browser Client menu bar__, click __One-Step > One-Step Manager__.
+      <br>
+      <kbd>
+        <img src="media/one-stepmenu.jpg">
+      </kbd>
+      <br><bR>
 
-  From the __Blueprint Editor menu bar___ in CSM Administrator, click __Managers > One-Step__.
-<br>
-  <kbd>
-    <img src="media/menu.png">
-  </kbd>
-  <br><bR>
+      From the __Blueprint Editor menu bar___ in CSM Administrator, click __Managers > One-Step__.
+      <br>
+      <kbd>
+        <img src="media/menu.png">
+      </kbd>
+      <br><bR>
 
 2. Select __Global__ scope.
 
 3. Select a Business Object Association: __Incident__
-<br>
+
   <kbd>
     <img src="media/business-object.png">
   </kbd>
   <br><bR>
 
-4. Click the __Create New__ button Create <kbd><img src="media/3568.png"> </kbd>.
+4. Click the __Create New__ button Create <kbd><img src="media/newnew.png"> </kbd>.
 
 
-5. rovide a __Name__ and __Description__ for the One-Step.
+5. Provide a __Name__ and __Description__ for the One-Step.
 
     * __Name__: xMatters Integration Agent
     * __Description__: Trigger xMatters Integration Agent Web Service
@@ -401,17 +401,17 @@ __The Integration Agent URL can be found by:__
 
 6. Click __OK__.
 
-  The One-Step Editor opens.
+      The One-Step Editor opens.
 
 
 7. Define Conditions for when you want this one step to run. 
 
-  _It is recommended to leave these settings along as an Automation Blueprint will be used to trigger the one-step._
-  <br>
-  <kbd>
-    <img src="media/conditions.png">
-  </kbd>
-  <br><bR>
+      _It is recommended to leave these settings along as an Automation Blueprint will be used to trigger the one-step._
+      <br>
+      <kbd>
+        <img src="media/conditions.png">
+      </kbd>
+      <br><bR>
 
 8. Add a __Call a Web Service Action__ to the Designer Board.
 

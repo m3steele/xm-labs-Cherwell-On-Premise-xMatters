@@ -11,14 +11,14 @@ Cherwell is a leading ITSM tool capable of advanced incident management. The int
 
 <br><br>
 
-The Cherwell (On-Premise) communication plan contains the following __inbound__ integrations:
+__xMatters Communication Plan Inbound Integrations__:
 
 * __New Incident One Step__: This integration receives the HTTP POST from Integration Agent and builds the event payload. It will query to make sure the targeted recipient exists and, if not, will set the recipient to null, forcing the event to target the recipient in the New Incident form. 
-* __Terminate Events__: This integration parses the Incident ID and queries for all * active events in xMatters with that Incident ID and then terminates them. 
+* __Terminate Events__: This integration parses the Incident ID and queries for all * active events in xMatters with that Incident ID and then terminates them.
 
 <br><br>
 
-The communication plan also contains the following __outbound__ integrations:
+__xMatters Communication Plan Outbound Integrations__:
 
 * __Event Delevery Notifications (IA)__: Updates the Incident Journal with devlivery information. This has been tested to work but has not been tested extensively.
 * __Event Status Notifications (IA)__: Updates the Incident Journal with event status information.

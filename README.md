@@ -8,12 +8,16 @@ Cherwell is a leading ITSM tool capable of advanced incident management. The int
 * Once an event is sent to xMatters Integraiton Agent a Cherwell REST API Get Incident and Get Task call allows for passing any incident or task field to xMatters. Included Communication Plan will need to be modified to accomodate any additional fields passed to xMatters.
 * A Cherwell webservice Onestep object or and Email can be used to trigger the xMatters event.
 * Parse Email Outbound Integration script included to break up email body for email initiated events.
-<br><br>
+
+<br><br><br>
+
 The Cherwell (On-Premise) communication plan contains the following __inbound__ integrations:
 
 * __New Incident One Step__: This integration receives the HTTP POST from Integration Agent and builds the event payload. It will query to make sure the targeted recipient exists and, if not, will set the recipient to null, forcing the event to target the recipient in the New Incident form. 
 * __Terminate Events__: This integration parses the Incident ID and queries for all * active events in xMatters with that Incident ID and then terminates them. 
-<br><br>
+
+<br><br><br>
+
 The communication plan also contains the following __outbound__ integrations:
 
 * __Event Delevery Notifications (IA)__: Updates the Incident Journal with devlivery information. This has been tested to work but has not been tested extensively.
